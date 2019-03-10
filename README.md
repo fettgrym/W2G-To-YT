@@ -13,7 +13,7 @@ pip install bs4
 pip install selenium
 ```
 
-## Running the tests
+## Running
 
 Unzip the downloaded folder and run:
 ```
