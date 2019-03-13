@@ -41,6 +41,7 @@ NOW COMES THE WATCH2GETHER SCRIPT
 
 """
 
+
 options = webdriver.ChromeOptions()
 options.add_argument('headless')
 # prepare the option for the chrome driver
@@ -51,26 +52,28 @@ browser.get(watch2gether)
 print(browser.current_url)
 # Make the browser headless and opens the Watch2gether URL
 
-time.sleep(3)
-
-cancel_button = browser.find_element_by_xpath('/html/body/div[3]/div[1]/div[3]/div[2]')
-cancel_button.click()
+time.sleep(5)
+browser.save_screenshot('loltest.png')
+search_button = browser.find_element_by_xpath('/html/body/div[2]/div[1]/div[3]/div/div/div[3]/i[1]')
+search_button.click()
 # finds the 'No Thanks' button and clicks it
 
 search = browser.find_element_by_xpath('//*[@id="search-bar-input"]')
 search.send_keys(result[final_vid])
 # Enters the Youtube url in the search bar
 
-search_click = browser.find_element_by_xpath('/html/body/div[4]/div[1]/div[2]/form/div/div[2]/button')
+search_click = browser.find_element_by_xpath('//*[@id="search-bar-form"]/div[2]/button')
 search_click.click()
 time.sleep(3)
-video_enter = browser.find_element_by_xpath('/html/body/div[4]/div[2]/div[3]/div/div[3]/div[1]/div[4]/div/div[1]')
+video_enter = browser.find_element_by_xpath('/html/body/div[2]/div[1]/div[4]/div[2]/div/div[6]/div[1]/div/div[1]')
 video_enter.click()
 # Enters the URL into Watch2gether
 
 time.sleep(1)
 # Remove the comment symbol below if you want to save a screenshot before exit
 # browser.save_screenshot('test.png')
+
+
 print(browser.title)
 print('\nDONE')
 browser.quit()
