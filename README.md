@@ -21,7 +21,7 @@ python watch2gether.py
 ```
 
 ## Version
-0.1
+0.2
 
 ## License
 
